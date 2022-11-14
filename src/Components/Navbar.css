@@ -1,0 +1,124 @@
+nav {
+  background-color: #121d44;
+  /* display: flex; */
+  position: fixed;
+  z-index: 11;
+  max-height: 3.875rem;
+}
+.logo {
+  max-width: 9.471rem;
+  max-height: 6.5rem;
+  /* margin-left: 10rem; */
+  margin-left: 2rem;
+  margin-top: 1.25rem;
+  padding: 0.313rem 0rem 0rem;
+}
+/* nav a.nav-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+} */
+nav ul li {
+  text-transform: uppercase;
+  visibility: visible;
+}
+.navbar-nav > li > .nav-link {
+  color: #fab301;
+  text-decoration: none;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+}
+/* .nav-item{
+    border-left: 1px solid #ff2511;
+  } */
+/* .nav-item:hover {
+  background:#F9F6EE;
+  border-radius: 8px;
+} */
+
+li > .nav-link:hover,
+li > .nav-link.active,
+li > .nav-link:focus,
+.nav-item:hover {
+  color: #050c25;
+  background: #e2e4e5;
+  border-radius: 8px;
+}
+.navbar-brand {
+  max-width: 10rem;
+  padding: 0 !important;
+  max-height: 6.3rem !important;
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    width: 7rem;
+  }
+}
+.nav-item {
+  padding: 0.8rem;
+  /* background-color: #0a183d; */
+}
+.window-scroll {
+  background: #000000c1;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  max-width: auto !important;
+}
+@media (max-width: 412px) {
+  .window-scroll {
+    /* width: 412px; */
+    top: 0;
+  }
+  nav {
+    max-height: 80px;
+  }
+  .navbar-brand {
+    width: 6rem;
+    max-height: 65px;
+  }
+  .logo {
+    padding-left: 1rem;
+    margin-top: 0;
+  }
+  .container,
+  .navbar {
+    padding-top: 0;
+    max-height: 3.3rem;
+  }
+  .nav-link {
+    font-size: x-small;
+  }
+  .navbar-brand {
+    max-height: 4rem;
+  }
+}
+@media (max-width: 992px) {
+  .logo {
+    padding-left: 2.2rem;
+    margin-top: 0;
+  }
+  .container,
+  .navbar {
+    /* max-height: 3rem; */
+    padding-top: 0;
+  }
+  .nav-link {
+    font-size: small;
+  }
+  .nav-item {
+    padding-top: 0rem;
+  }
+  .navbar-brand {
+    max-height: 3rem;
+  }
+  .navbar-toggler {
+    margin-bottom: 0.2rem;
+    top: 0;
+  }
+  .nav-item {
+    background-color: #000000c1;
+  }
+}

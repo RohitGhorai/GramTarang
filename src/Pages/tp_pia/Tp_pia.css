@@ -1,0 +1,40 @@
+svg {
+  margin-top: 30px;
+}
+.foo {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.foo {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
+}
+
+.yellow {
+  background: #fab301;
+}
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+path:hover {
+  fill: #126f6f;
+}
+path {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  stroke-opacity: 1;
+  stroke-linejoin: round;
+  fill-opacity: 1;
+  stroke-width: 1;
+}
