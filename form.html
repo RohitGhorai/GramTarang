@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<title>
+		Center Details
+	</title>
+
+	<style>
+
+		
+		body {
+			background-color: #C991EC;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		/* Styling the Form (Color, Padding, Shadow) */
+		form {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		/* Styling form-control Label */
+		.form-control label {
+			display: block;
+			margin-bottom: 1px;
+		}
+
+		/* Styling form-control input,
+		select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 2px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+		.form-HEAD{
+		border: 2px solid #777;
+			border-radius: 2px;
+		margin-right: 0%;
+
+		}
+
+		/* Styling form-control Radio
+		button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+		/* Styling Button */
+		button {
+			background-color: #C991EC;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Centre Details Form</h1>
+
+	<!-- Create Form -->
+	<form id="form">
+
+		<!-- Details -->
+		<div class="form-control">
+			<label for="name" id="label-name">
+				Centre Name
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="Centre Name"
+				placeholder="Enter centre name" />
+		</div>
+
+
+		<div class="form-control">
+			<label for="name" id="label-location">
+				Centre Location
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="Centre Location"
+				placeholder="Enter centre Location" />
+		</div>
+
+
+		<div class="form-control">
+			<label for="number" id="label-no">
+				Contact No
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="number"
+				id="Centre Number"
+				placeholder="Enter Contact Number" />
+		</div>
+
+
+
+		<div class="form-control">
+			<label for="email" id="label-email">
+				Email ID
+			</label>
+
+			<!-- Input Type Email-->
+			<input type="email"
+				id="email"
+				placeholder="Enter your email" />
+		</div>
+
+
+		<div class="form-control">
+			<label for="name" id="label-SPOC">
+				Name Of SPOC
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="Centre SPOC Name"
+				placeholder="Enter SPOC Name" />
+		</div>
+		<div class="form-HEAD">
+			<label for="name" id="label-HEAD">
+				Centre Head Details
+			</label>
+			<br><br>
+			<div class="form-label">
+
+
+				<label for="name" id="label-HEAD-Name">
+				Name
+			</label>
+			<input type="text"
+				id="Head Name"
+				placeholder="Head Name" />
+
+
+
+				<label for="name" id="label-HEAD-No">
+				Mobile No
+			</label>
+				<input type="number"
+				id="label-HEAD-No"
+				placeholder="Enter Mobile No" /><br><br>
+
+
+
+
+				<label for="name" id="label-HEAD-Email">
+				Email
+			</label>
+				<input type="email"
+				id="label-HEAD-Email"
+				placeholder="Enter your email" />
+				</div><br>
+		</div><br>
+
+
+
+		<div class="form-control">
+			<label for="number" id="label-PIA">
+				PIA Pan
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="number"
+				id="label-PIA"
+				placeholder="Enter your PIA Pan" />
+		</div>
+
+		<div class="form-control">
+			<label for="number" id="label-GST">
+				GST-No
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="number"
+				id="label-GST"
+				placeholder="Enter your GST No" />
+		</div>
+
+		<div class="form-HEAD">
+			<label for="name" id="label-HEAD">
+				Course Details
+			</label>
+			<br><br>
+			
+			<div class="form-label">
+
+
+				<label for="name" id="label-HEAD-Name">
+				 Name
+			</label>
+			<input type="text"
+				id="Head Name"
+				placeholder="Enter Course Name" />
+
+
+
+				<label for="name" id="label-HEAD-No">
+				 Code
+			</label>
+				<input type="number"
+				id="label-HEAD-No"
+				placeholder="Enter Course Code" /><br>
+
+
+
+
+		</div><br>
+	</div>
+	<br>
+
+
+		<div class="form-control">
+			<label for="role" id="label-role">
+				NSQF level
+			</label>
+			
+			<!-- Dropdown options -->
+			<select name="role" id="role">
+				<option value="level">level-1</option>
+				<option value="level">level-2</option>
+				<option value="level">level-3</option>
+				<option value="level">level-4</option>
+				<option value="level">level-5</option>
+				<option value="level">level-6</option>
+				<option value="level">level-7</option>
+				<option value="level">level-8</option>
+				<option value="level">level-9</option>
+				<option value="level">level-10</option>
+				
+			</select>
+		</div>
+		<div class="form-control">
+			<label for="number" id="label-GST">
+				Upload Go Ahead Letter
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="file" id="myFile" name="filename">
+  
+		</div>
+		
+
+
+		
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit">
+			Submit
+		</button>
+	</form>
+</body>
+
+</html>
