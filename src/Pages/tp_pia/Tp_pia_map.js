@@ -3,10 +3,11 @@ import "./Tp_pia.css";
 import { states } from "./Tp_pia_state";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import ReactTooltip from "react-tooltip";
 
 const Tp_pia_map = () => {
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
     <div>
@@ -30,6 +31,12 @@ const Tp_pia_map = () => {
           </center>
         </div>
       </div>
+      {states.map((state) => (
+        <ReactTooltip id={state.id}>
+          <span>{state.id}</span><br/>
+          <span>{state.title}</span>
+        </ReactTooltip>
+      ))}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -41,11 +48,13 @@ const Tp_pia_map = () => {
         {states.map((state) => (
           <Link to={state.src}>
             <path
-              id={state.id}
+              // id={state.id}
               title={state.title}
               fill={state.fill}
               stroke={state.stroke}
               d={state.d}
+              data-tip
+              data-for={state.id}
             />
           </Link>
         ))}

@@ -38,3 +38,6 @@ path {
   fill-opacity: 1;
   stroke-width: 1;
 }
+path:focus{
+  visibility: hidden;
+}
