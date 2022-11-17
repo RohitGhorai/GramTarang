@@ -1,11 +1,11 @@
 import React from "react";
-import "./Tp_pia.css";
-import { tp_pia_states  as states_1 } from "./Tp_pia_state";
+import { sna_states as states_2 } from "./Sna_state";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
+import "../tp_pia/Tp_pia.css";
 
-const Tp_pia_map = () => {
+const Sna_map = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
@@ -31,9 +31,10 @@ const Tp_pia_map = () => {
           </center>
         </div>
       </div>
-      {states_1.map((state) => (
+      {states_2.map((state) => (
         <ReactTooltip id={state.id}>
-          <span>{state.id}</span><br/>
+          <span>{state.id}</span>
+          <br />
           <span>{state.title}</span>
         </ReactTooltip>
       ))}
@@ -45,7 +46,7 @@ const Tp_pia_map = () => {
         width="611.85999"
       >
         <defs id="defs42" />
-        {states_1.map((state) => (
+        {states_2.map((state) => (
           <Link to={state.src}>
             <path
               // id={state.id}
@@ -69,4 +70,4 @@ const Tp_pia_map = () => {
   );
 };
 
-export default Tp_pia_map;
+export default Sna_map;

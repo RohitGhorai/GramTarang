@@ -31,13 +31,12 @@ path:hover {
   fill: #126f6f;
 }
 path {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   stroke-opacity: 1;
   stroke-linejoin: round;
   fill-opacity: 1;
   stroke-width: 1;
 }
-path:focus{
+path:focus {
   visibility: hidden;
 }

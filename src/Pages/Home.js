@@ -48,9 +48,9 @@ function Home() {
                 State Nodal Agencies (SNA) can login and view respective details
                 and process overview of their respective states.
               </p>
-              <a href="#" className="info">
+              <Link to="/sna_map" className="info">
                 Choose State
-              </a>
+              </Link>
             </div>
           </div>
           <div className="view view-tenth">
