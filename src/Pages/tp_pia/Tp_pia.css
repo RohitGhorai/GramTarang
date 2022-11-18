@@ -29,13 +29,14 @@ h3 {
 }
 path:hover {
   fill: #126f6f;
+  stroke-width: 1.5;
 }
 path {
   cursor: pointer;
   stroke-opacity: 1;
   stroke-linejoin: round;
   fill-opacity: 1;
-  stroke-width: 1;
+  stroke-width: 0.8;
 }
 path:focus {
   visibility: hidden;
