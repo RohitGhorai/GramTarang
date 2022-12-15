@@ -1,6 +1,6 @@
 import React from "react";
 import "./Tp_pia.css";
-import { tp_pia_states  as states_1 } from "./Tp_pia_state";
+import { tp_pia_states as states_1 } from "./Tp_pia_state";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
@@ -33,7 +33,8 @@ const Tp_pia_map = () => {
       </div>
       {states_1.map((state) => (
         <ReactTooltip id={state.id}>
-          <span>{state.id}</span><br/>
+          <span>{state.id}</span>
+          <br />
           <span>{state.title}</span>
         </ReactTooltip>
       ))}
