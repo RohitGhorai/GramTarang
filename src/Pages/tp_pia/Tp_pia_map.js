@@ -10,7 +10,7 @@ const Tp_pia_map = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <div>
+    <div className="map">
       <div
         className="app-content"
         style={{

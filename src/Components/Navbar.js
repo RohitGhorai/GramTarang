@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav id="navbar" className="navbar navbar-expand-lg fixed-top">
       <div className="container navbar">
-        <a className="navbar-brand" href="#">
+        <a className="header-brand" href="#">
           <img className="logo" src={Logo} alt="Logo..." />
         </a>
         <button
