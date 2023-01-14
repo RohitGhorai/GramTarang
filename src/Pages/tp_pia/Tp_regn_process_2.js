@@ -1,7 +1,7 @@
 import React from "react";
 
 function Form() {
-  const Detail = [
+  const SO_Detail = [
     { title: "Address", type: "text" },
     { title: "District", type: "text" },
     { title: "City", type: "text" },
@@ -14,7 +14,7 @@ function Form() {
   ];
   return (
     <>
-      {Detail.map((col_1) => (
+      {SO_Detail.map((col_1) => (
         <div className="row mb-3">
           <label for="colFormLabel" className="col-sm-2 col-form-label">
             {col_1.title}
