@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form() {
+const Form = () => {
   const SO_Detail = [
     { title: "Address", type: "text" },
     { title: "District", type: "text" },
@@ -30,8 +30,8 @@ function Form() {
       ))}
     </>
   );
-}
-function Tp_regn_process_2() {
+};
+const Tp_regn_process_2 = () => {
   return (
     <section id="step-2" className="form-step d-none">
       <h2 className="font-normal" style={{ color: "#00008B" }}>
@@ -151,6 +151,6 @@ function Tp_regn_process_2() {
       </div>
     </section>
   );
-}
+};
 
 export default Tp_regn_process_2;

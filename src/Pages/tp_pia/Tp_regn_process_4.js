@@ -1,6 +1,6 @@
 import React from "react";
 
-function Tp_regn_process_4() {
+const Tp_regn_process_4 = () => {
   const PC_Detail = [
     { title: "Name", type: "text" },
     { title: "Designation", type: "text" },
@@ -15,10 +15,14 @@ function Tp_regn_process_4() {
   ];
   return (
     <section id="step-4" className="form-step d-none">
-      <h2 className="font-normal" style={{ color: "#00008B" }}>Project Contact Personal Details</h2>
-      <h4 className="text-center mt-3" style={{ color: "#00008B" }}>Regional/State Office</h4>
-        <form className="row g-3 mt-3">
-      {PC_Detail.map((props) => (
+      <h2 className="font-normal" style={{ color: "#00008B" }}>
+        Project Contact Personal Details
+      </h2>
+      <h4 className="text-center mt-3" style={{ color: "#00008B" }}>
+        Regional/State Office
+      </h4>
+      <form className="row g-3 mt-3">
+        {PC_Detail.map((props) => (
           <div className="col-sm-6">
             <div className="row">
               <label for="colFormLabel" className="col-sm-2 col-form-label">
@@ -32,8 +36,8 @@ function Tp_regn_process_4() {
                 />
               </div>
             </div>
-      </div>
-      ))}
+          </div>
+        ))}
       </form>
       <div className="text-center mt-3">
         <button
@@ -49,6 +53,6 @@ function Tp_regn_process_4() {
       </div>
     </section>
   );
-}
+};
 
 export default Tp_regn_process_4;

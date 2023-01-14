@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form_2() {
+const Form_2 = () => {
   const HO_Detail = [
     { title: "Name", type: "text" },
     { title: "Educational Qualification", type: "text" },
@@ -38,7 +38,7 @@ function Form_2() {
   );
 }
 
-function Tp_regn_process_3() {
+const Tp_regn_process_3 = () => {
   return (
     <section id="step-3" className="form-step d-none">
       <h2 className="font-normal" style={{ color: "#00008B" }}>
@@ -95,6 +95,6 @@ function Tp_regn_process_3() {
       </div>
     </section>
   );
-}
+};
 
 export default Tp_regn_process_3;

@@ -1,40 +1,11 @@
 import React from "react";
-import Process_1 from "./Tp_regn_process_1"
-import Process_2 from "./Tp_regn_process_2"
-import Process_3 from "./Tp_regn_process_3"
-import Process_4 from "./Tp_regn_process_4"
+import Process_1 from "./Tp_regn_process_1";
+import Process_2 from "./Tp_regn_process_2";
+import Process_3 from "./Tp_regn_process_3";
+import Process_4 from "./Tp_regn_process_4";
 import "./Tp_pia.css";
 
-// function col_1(){
-  // const row_1 = [
-  //   { label: "Address", type: "text" },
-  //   { label: "District", type: "text" },
-  //   { label: "City", type: "text" },
-  //   { label: "State/UT", type: "text" },
-  //   { label: "Pin code", type: "number" },
-  // ];
-//   return (
-//     <>
-//       {row_1.map((rows) => (
-//         <div class="row mb-3">
-//           <label for="colFormLabel" class="col-sm-2 col-form-label">
-//             {rows.label}
-//           </label>
-//           <div class="col-sm-10">
-//             <input
-//               type="text"
-//               class="form-control"
-//               id="colFormLabel"
-//               placeholder="col-form-label"
-//             />
-//           </div>
-//         </div>
-//       ))}
-//     </>
-//   );
-// };
-
-function Tp_regn() {
+const Tp_regn = () => {
   const navigateToFormStep = (stepNumber) => {
     document.querySelectorAll(".form-step").forEach((formStepElement) => {
       formStepElement.classList.add("d-none");
@@ -149,14 +120,14 @@ function Tp_regn() {
           enctype="multipart/form-data"
           method="POST"
         >
-          <Process_1/>
-          <Process_2/>
-          <Process_3/>
-          <Process_4/>
+          <Process_1 />
+          <Process_2 />
+          <Process_3 />
+          <Process_4 />
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default Tp_regn;
