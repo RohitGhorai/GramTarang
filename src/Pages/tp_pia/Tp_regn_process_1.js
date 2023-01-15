@@ -36,7 +36,7 @@ const Tp_regn_process_1 = () => {
           </p>
         </span>
         <br />
-        <div class="form-check">
+        <div className="form-check">
           <input
             className="form-check-input"
             type="checkbox"

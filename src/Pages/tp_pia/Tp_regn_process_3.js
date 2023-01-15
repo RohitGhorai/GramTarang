@@ -50,28 +50,28 @@ const Tp_regn_process_3 = () => {
           <h4 className="text-center mt-2 mb-3" style={{ color: "#00008B" }}>
             Other Promoter Details
           </h4>
-          <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <div className="row mb-3">
+            <label for="inputEmail3" className="col-sm-2 col-form-label">
               Promoter 1
             </label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" />
+            <div className="col-sm-10">
+              <input type="email" className="form-control" id="inputEmail3" />
             </div>
           </div>
-          <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <div className="row mb-3">
+            <label for="inputEmail3" className="col-sm-2 col-form-label">
               Promoter 2
             </label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" />
+            <div className="col-sm-10">
+              <input type="email" className="form-control" id="inputEmail3" />
             </div>
           </div>
-          <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">
+          <div className="row mb-3">
+            <label for="inputEmail3" className="col-sm-2 col-form-label">
               Promoter 3
             </label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="inputEmail3" />
+            <div className="col-sm-10">
+              <input type="number" className="form-control" id="inputEmail3" />
             </div>
           </div>
         </div>
