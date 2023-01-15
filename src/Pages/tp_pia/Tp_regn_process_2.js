@@ -97,7 +97,7 @@ const Tp_regn_process_2 = () => {
             Category of Organization
           </label>
           <select className="form-control">
-          <option value="" selected="">
+            <option value="" selected="">
               --Select--
             </option>
             {Organization.map((props) => (

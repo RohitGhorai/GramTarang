@@ -1,56 +1,6 @@
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 80%;
-  border-radius: 5px;
-  background-color: #7d6498;
-  margin-top: 144px;
-  margin-left: 250px;
+/* 
 
-  margin-bottom: 144px;
-  width: 1000px;
-}
-.cardbox {
-  padding: 10px 10px 10px 10px;
-}
 
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-
-button {
-  background-color: #7d6498;
-  color: white;
-
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 90%;
-  border-radius: 5px;
-
-  height: 45px;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cardbody {
-  padding: 16px;
-  background-color: rgb(255, 252, 249);
-  width: 450px;
-  height: 590px;
-  border-radius: 8px;
-  color: #7d6498;
-  font-size: large;
-}
 
 * {
   box-sizing: border-box;
@@ -78,8 +28,37 @@ button:hover {
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 800px) {
+.glow{
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .btn:hover, .btn:focus{
+    opacity: 0.8;
+  }
+  .cardbody_1{
+    width: "450px";
+  }
+@media (max-width: 1040px) {
   .flex-container {
     flex-direction: column;
   }
-}
+  .cardbody_1{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+  }
+} 

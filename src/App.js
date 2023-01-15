@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from './Components/Sidebar';
 import Tp_form from "./Pages/tp_pia/Tp_regn";
+import Tp_pia_log_in from './Pages/tp_pia/Tp_pia_log_in';
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tp_pia_map" element={<Tp_pia_map />} />
+          <Route path="/tp_pia_log_in" element={<Tp_pia_log_in />} />
           <Route path="/sna_map" element={<Sna_map />} />
           <Route path="/side_nav" element={<Sidebar />} />
-          <Route path="/tp_form" element={<Tp_form />} />
+          <Route path="/tp_regn_form" element={<Tp_form />} />
           {/* <Route path="/od.tp_pia" element={<Od />} /> */}
         </Routes>
       </Router>
