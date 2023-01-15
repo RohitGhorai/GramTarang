@@ -12,6 +12,7 @@ const Form = () => {
     { title: "Email Id", type: "email" },
     { title: "GST", type: "number" },
   ];
+
   return (
     <>
       {SO_Detail.map((col_1) => (
@@ -32,6 +33,40 @@ const Form = () => {
   );
 };
 const Tp_regn_process_2 = () => {
+  const Scheme = [
+    "DDUGKY",
+    "PMKK",
+    "Sagarmala",
+    "PMKVY",
+    "Roshni",
+    "NULM",
+    "OSDA",
+    "CORPORATES",
+    "MORTH-RPL",
+    "MMKVY",
+    "Samarth",
+    "PMKUV",
+    "PMAKVY",
+    "Gujrat",
+    "SURYAMITRA",
+    "VBKY",
+    "MEPMA",
+    "Standalone Training Institutes",
+    "HIMMAYAT",
+    "NAI MANZIL",
+    "SEEKHO AUR KAMAO",
+    "SEEDAP - AYS",
+    "Uttar Pradesh Skill Development Mission",
+  ];
+  const Organization = [
+    "Institute Setup By Govt.",
+    "Institute Setup By Corporate",
+    "Institute Setup By Trust / NGO / Society",
+    "Corporates",
+    "Standalone Training Institutes",
+    "Others",
+  ];
+
   return (
     <section id="step-2" className="form-step d-none">
       <h2 className="font-normal" style={{ color: "#00008B" }}>
@@ -41,11 +76,12 @@ const Tp_regn_process_2 = () => {
         <div className="form-group">
           <label for="exampleFormControlSelect2">Scheme</label>
           <select className="form-control">
-            <option>-- Select --</option>
-            <option>-- 1 --</option>
-            <option>-- 2 --</option>
-            <option>-- 3 --</option>
-            <option>-- 4 --</option>
+            <option value="" selected="">
+              --Select--
+            </option>
+            {Scheme.map((props) => (
+              <option value={props}>{props}</option>
+            ))}
           </select>
         </div>
         <div className="form-group" style={{ marginTop: "10px" }}>
@@ -61,11 +97,12 @@ const Tp_regn_process_2 = () => {
             Category of Organization
           </label>
           <select className="form-control">
-            <option>-- Select --</option>
-            <option>-- 1 --</option>
-            <option>-- 2 --</option>
-            <option>-- 3 --</option>
-            <option>-- 4 --</option>
+          <option value="" selected="">
+              --Select--
+            </option>
+            {Organization.map((props) => (
+              <option value={props}>{props}</option>
+            ))}
           </select>
         </div>
         <div className="form-group" style={{ marginTop: "10px" }}>
