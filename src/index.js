@@ -1,14 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "react-jss";
+import Theme from "./resources/theme";
+import Routes from "./routes";
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
+import PrivateSection from "./routes/PrivateSection";
+import App from "./routes/App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ReactDOM.render(
+  <ThemeProvider theme={Theme}>
+    <Router>
+      {/* <Routes /> */}
+      {/* <PrivateSection/> */}
+      <App/>
+    </Router>
+  </ThemeProvider>,
+  document.getElementById("root")
 );
 
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

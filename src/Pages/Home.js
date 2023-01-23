@@ -10,13 +10,15 @@ import src from "../Assets/src_login.jpg";
 import corporate from "../Assets/corporate.jpg";
 import sna from "../Assets/sna_login.jpg";
 import { useEffect } from "react";
+import Navbar from "../Components/navbar/Navbar";
 
 function Home() {
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
     <>
+      <Navbar />
       <div className="container">
         <video
           className="d-block w-100"
@@ -24,7 +26,7 @@ function Home() {
           autoPlay={true}
           loop
           muted
-          />
+        />
         <div className="main">
           <div className="view view-tenth">
             <img src={tp} />
@@ -36,7 +38,9 @@ function Home() {
                 respective credentials.
               </p>
               {/* <Link to="/tp_pia_map"> */}
-                <Link to="/tp_pia_map" className="info">Choose State</Link>
+              <Link to="/tp_pia_map" className="info">
+                Choose State
+              </Link>
               {/* </Link> */}
             </div>
           </div>
