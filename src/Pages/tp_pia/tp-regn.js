@@ -2,10 +2,10 @@ import * as React from "react";
 import { Form, FormElement } from "@progress/kendo-react-form";
 import { Button } from "@progress/kendo-react-buttons";
 import { Stepper } from "@progress/kendo-react-layout";
-import { TpRegnProcess_1 } from "./Tp_regn_process_1";
-import { TpRegnProcess_2 } from "./Tp_regn_process_2";
-import { TpRegnProcess_3 } from "./Tp_regn_process_3";
-import { TpRegnProcess_4 } from "./Tp_regn_process_4";
+import { TpRegnProcess_1 } from "./tp-regn-process-1";
+import { TpRegnProcess_2 } from "./tp-regn-process-2";
+import { TpRegnProcess_3 } from "./tp-regn-process-3";
+import { TpRegnProcess_4 } from "./tp-regn-process-4";
 
 const stepPages = [
   TpRegnProcess_1,

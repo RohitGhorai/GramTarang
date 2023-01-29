@@ -1,6 +1,6 @@
 import React from "react";
-import "./Tp_pia.css";
-import { tp_pia_states as states_1 } from "./Tp_pia_state";
+import "./tp.css";
+import { tp_pia_states as states_1 } from "./tp-state";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
@@ -52,7 +52,7 @@ const Tp_pia_map = () => {
         >
           <defs id="defs42" />
           {states_1.map((state) => (
-            <Link to="/tp_pia_log_in">
+            <Link to="/tp_log_in">
               <path
                 // id={state.id}
                 title={state.title}

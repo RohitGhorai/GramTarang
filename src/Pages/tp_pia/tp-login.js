@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./tp_pia_log_in.css";
+import "./tp-login.css";
 import { Link } from "react-router-dom";
 import ig1 from "../../Assets/cutmtransparent.png";
 import ig2 from "../../Assets/logo-white.png";

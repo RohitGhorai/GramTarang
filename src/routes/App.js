@@ -1,9 +1,9 @@
 import React from "react";
-import Tp_pia_map from "../Pages/tp_pia/Tp_pia_map";
-import Sna_map from "../Pages/sna/Sna_map";
+import Tp_map from "../Pages/tp_pia/tp-map";
+import Sna_map from "../Pages/sna/sna-map";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {Tp_regn} from "../Pages/tp_pia/Tp_regn";
-import Tp_pia_log_in from "../Pages/tp_pia/Tp_pia_log_in";
+import {Tp_regn} from "../Pages/tp_pia/tp-regn";
+import Tp_log_in from "../Pages/tp_pia/tp-login";
 import Home from "../Pages/Home";
 import PrivateSection from "./PrivateSection";
 import SLUGS from "../resources/slugs";
@@ -14,25 +14,15 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/tp_pia_map" render={() => <Tp_pia_map />} />
-          <Route exact path="/tp_pia_log_in" render={() => <Tp_pia_log_in />} />
+          <Route exact path="/tp_pia_map" render={() => <Tp_map />} />
+          <Route exact path="/tp_log_in" render={() => <Tp_log_in />} />
           <Route exact path="/sna_map" render={() => <Sna_map />} />
           <Route exact path="/tp_regn_form" render={() => <Tp_regn />} />
-          <Route exact path="/dashboard" render={() => <PrivateSection />} />
+          <Route exact path={SLUGS.dashboard} render={() => <PrivateSection />} />
           <Route
             exact
-            path={SLUGS.overview}
-            render={() => <div>overview</div>}
-          />
-          <Route
-            exact
-            path={SLUGS.tickets}
-            render={() => <PrivateSection>tickets</PrivateSection>}
-          />
-          <Route
-            exact
-            path={SLUGS.ideasTwo}
-            render={() => <PrivateSection>Ideas</PrivateSection>}
+            path={SLUGS.projectManagement}
+            render={() => <PrivateSection/>}
           />
           <Route
             exact
