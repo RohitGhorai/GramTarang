@@ -20,6 +20,7 @@ export default {
   batchManagementEight: '/batchManagement/batchStatusDetails',
   batchManagementNine: '/batchManagement/assessorDetails',
   profileManagement: '/profileManagement',
+  settings: "/settings",
 
   // auth
   login: "/login",

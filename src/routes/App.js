@@ -19,11 +19,11 @@ function App() {
           <Route exact path="/sna_map" render={() => <Sna_map />} />
           <Route exact path="/tp_regn_form" render={() => <Tp_regn />} />
           <Route exact path={SLUGS.dashboard} render={() => <PrivateSection />} />
-          <Route
+          {/* <Route
             exact
             path={SLUGS.projectManagement}
             render={() => <PrivateSection/>}
-          />
+          /> */}
           <Route
             exact
             path={SLUGS.contacts}
