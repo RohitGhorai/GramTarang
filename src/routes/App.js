@@ -7,6 +7,7 @@ import Tp_log_in from "../Pages/tp_pia/tp-login";
 import Home from "../Pages/Home";
 import PrivateSection from "./PrivateSection";
 import SLUGS from "../resources/slugs";
+import AddCenter from "./dashboard/centerManagement/addCenter";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/sna_map" render={() => <Sna_map />} />
           <Route exact path="/tp_regn_form" render={() => <Tp_regn />} />
           <Route exact path={SLUGS.dashboard} render={() => <PrivateSection />} />
+          <Route exact path={SLUGS.centerManagementThree} render={() => <AddCenter />} />
           {/* <Route
             exact
             path={SLUGS.projectManagement}

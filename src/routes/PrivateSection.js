@@ -4,6 +4,7 @@ import { Column, Row } from "simple-flexbox";
 import { SidebarComponent, SidebarContext } from "../Components/sidebar";
 import HeaderComponent from "../Components/header/HeaderComponent";
 import './dashboard/index.css';
+import PrivateRoutes from "./PrivateRoutes";
 
 const useStyles = createUseStyles({
   container: {
@@ -18,7 +19,7 @@ const useStyles = createUseStyles({
     },
   },
   contentBlock: {
-    marginTop: 54,
+    marginTop: 20,
   },
 });
 
@@ -34,7 +35,7 @@ function PrivateSection() {
                 <Column flexGrow={1} className={classes.mainBlock}>
                     <HeaderComponent />
                     <div className={classes.contentBlock}>
-                       
+                      <PrivateRoutes/>
                     </div>
                 </Column>
             </Row>

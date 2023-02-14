@@ -13,8 +13,8 @@ ReactDOM.render(
   <ThemeProvider theme={Theme}>
     <Router>
       {/* <Routes /> */}
-      {/* <PrivateSection/> */}
-      <App/>
+      <PrivateSection/>
+      {/* <App/> */}
     </Router>
   </ThemeProvider>,
   document.getElementById("root")
