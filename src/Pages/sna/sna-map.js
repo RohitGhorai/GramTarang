@@ -1,10 +1,11 @@
 import React from "react";
 import { sna_states as states_2 } from "./sna-state";
-import { Link } from "react-router-dom";
+
 import { useEffect } from "react";
-import ReactTooltip from "react-tooltip";
+import * as ReactTooltip from "react-tooltip";
 import "../tp_pia/tp.css";
 import Navbar from "../../Components/navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Sna_map = () => {
   useEffect(() => {

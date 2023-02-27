@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect, Routes} from 'react-router-dom';
 import SLUGS from '../resources/slugs';
 import AddCenter from './dashboard/centerManagement/addCenter';
 import LoadingComponent from './../Components/loading/LoadingComponent';
@@ -10,8 +10,8 @@ const DashboardComponent = lazy(() => import('./dashboard'));
 function PrivateRoutes() {
     return (
         <Suspense fallback={<LoadingComponent loading />}>
-            <Switch>
-                <Route exact path={SLUGS.dashboard} component={DashboardComponent} />
+            <Routes>
+                {/* <Route exact path={SLUGS.dashboard} component={DashboardComponent} /> */}
                 <Route exact path={SLUGS.projectManagementTwo} render={() => <div>projectManagementTwo</div>} />
                 <Route exact path={SLUGS.projectManagementThree} render={() => <div>projectManagementThree</div>} />
                 <Route exact path={SLUGS.projectManagementFour} render={() => <div>projectManagementFour</div>} />
@@ -28,8 +28,8 @@ function PrivateRoutes() {
                 <Route exact path={SLUGS.batchManagementNine} render={() => <div>projectManagementNine</div>} />
                 <Route exact path={SLUGS.profileManagement} render={() => <div>profileManagement</div>} />
                 
-                <Redirect to={SLUGS.dashboard} />
-            </Switch>
+                {/* <Redirect to={SLUGS.dashboard} /> */}
+            </Routes>
         </Suspense>
     );
 }

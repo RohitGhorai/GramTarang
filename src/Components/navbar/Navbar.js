@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { Outlet } from "react-router";
 
 const Navbar = () => {
   // window.addEventListener("scroll", () => {
@@ -20,6 +21,7 @@ const Navbar = () => {
   //   }
   // };
   return (
+    <>
     <nav id="navbar" className="navbar navbar-expand-lg fixed-top" style={{backgroundColor: " #000000c1", maxHeight: "3.875rem"}}>
       <div className="container navbar">
         <a className="header-brand" href="#">
@@ -70,6 +72,8 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    <Outlet/>
+    </>
   );
 };
 
