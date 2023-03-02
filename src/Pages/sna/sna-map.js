@@ -1,11 +1,10 @@
 import React from "react";
 import { sna_states as states_2 } from "./sna-state";
-
 import { useEffect } from "react";
-import * as ReactTooltip from "react-tooltip";
 import "../tp_pia/tp.css";
 import Navbar from "../../Components/navbar/Navbar";
 import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 
 const Sna_map = () => {
   useEffect(() => {
@@ -52,7 +51,7 @@ const Sna_map = () => {
         >
           <defs id="defs42" />
           {states_2.map((state) => (
-            <Link to="/tp_pia_log_in">
+            <Link to="/tp_log_in">
               <path
                 // id={state.id}
                 title={state.title}
