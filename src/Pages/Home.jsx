@@ -2,7 +2,7 @@ import React from "react";
 import video1 from "../Assets/video1.mp4";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import Base from "./../Components/Base";
+import Base from "../Components/Base";
 import tp from "../Assets/tp_pia.jpg";
 import cp from "../Assets/cp.jpg";
 import css from "../Assets/css_login.jpg";
