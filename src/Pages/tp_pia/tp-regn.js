@@ -6,6 +6,7 @@ import { TpRegnProcess_1 } from "./tp-regn-process-1";
 import { TpRegnProcess_2 } from "./tp-regn-process-2";
 import { TpRegnProcess_3 } from "./tp-regn-process-3";
 import { TpRegnProcess_4 } from "./tp-regn-process-4";
+import { useParams } from "react-router-dom";
 
 const stepPages = [
   TpRegnProcess_1,
@@ -13,6 +14,7 @@ const stepPages = [
   TpRegnProcess_3,
   TpRegnProcess_4,
 ];
+
 export const Tp_regn = () => {
   const [step, setStep] = React.useState(0);
   const [formState, setFormState] = React.useState({});

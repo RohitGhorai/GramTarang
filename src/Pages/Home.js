@@ -2,6 +2,7 @@ import React from "react";
 import video1 from "../Assets/video1.mp4";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Base from "./../Components/Base";
 import tp from "../Assets/tp_pia.jpg";
 import cp from "../Assets/cp.jpg";
 import css from "../Assets/css_login.jpg";
@@ -10,15 +11,13 @@ import src from "../Assets/src_login.jpg";
 import corporate from "../Assets/corporate.jpg";
 import sna from "../Assets/sna_login.jpg";
 import { useEffect } from "react";
-import Navbar from "../Components/navbar/Navbar";
 
 function Home() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <>
-      <Navbar />
+    <Base>
       <div className="container">
         <video
           className="d-block w-100"
@@ -138,7 +137,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
+    </Base>
   );
 }
 

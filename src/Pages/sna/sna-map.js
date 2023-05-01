@@ -1,18 +1,17 @@
 import React from "react";
 import { sna_states as states_2 } from "./sna-state";
 import { useEffect } from "react";
-import "../tp_pia/tp.css";
-import Navbar from "../../Components/navbar/Navbar";
+import "../tp_pia/map.css";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
+import Base from "./../../Components/Base";
 
 const Sna_map = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <>
-      <Navbar />
+    <Base>
       <div className="map">
         <div
           className="app-content"
@@ -51,7 +50,7 @@ const Sna_map = () => {
         >
           <defs id="defs42" />
           {states_2.map((state) => (
-            <Link to="/tp_log_in">
+            <Link to="/log_in">
               <path
                 // id={state.id}
                 title={state.title}
@@ -71,7 +70,7 @@ const Sna_map = () => {
           <div className="foo yellow"></div>Portal Under Construction
         </center>
       </div>
-    </>
+    </Base>
   );
 };
 

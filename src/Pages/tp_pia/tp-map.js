@@ -1,19 +1,18 @@
 import React from "react";
-import "./tp.css";
+import "./map.css";
 import { tp_pia_states as states_1 } from "./tp-state";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ReactTooltip from "react-tooltip";
 import Navbar from "../../Components/navbar/Navbar";
+import Base from "../../Components/Base";
 
 const Tp_pia_map = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
-    <>
-      <Navbar />
-
+    <Base>
       <div className="map">
         <div
           className="app-content"
@@ -52,7 +51,7 @@ const Tp_pia_map = () => {
         >
           <defs id="defs42" />
           {states_1.map((state) => (
-            <Link to="/tp_log_in">
+            <Link to="/log_in">
               <path
                 // id={state.id}
                 title={state.title}
@@ -72,7 +71,7 @@ const Tp_pia_map = () => {
           <div className="foo yellow"></div>Portal Under Construction
         </center>
       </div>
-    </>
+    </Base>
   );
 };
 
