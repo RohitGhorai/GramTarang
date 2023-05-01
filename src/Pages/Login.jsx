@@ -1,9 +1,8 @@
 import React from "react";
 import Base from "./../Components/Base";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import userContext from "./../context/userContext";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import ig1 from "../Assets/cutmtransparent.png";
 import ig2 from "../Assets/logo-white.png";
 import ig3 from "../Assets/DDU-GKY.png";
@@ -13,10 +12,9 @@ import { toast } from "react-toastify";
 import { loginUser } from "../services/user-service";
 import { doLogin } from "../authentication";
 import { Card, Form } from "react-bootstrap";
-import { useEffect } from "react";
 
 export default function Login(props) {
-  const userContextData = useContext(userContext);
+  const { user, setUser } = useContext(userContext);
   const navigate = useNavigate();
   const [loginDetail, setLoginDetail] = useState({
     userName: "",
@@ -46,14 +44,16 @@ export default function Login(props) {
       return;
     }
     loginUser(loginDetail)
-      .then((data) => {
-        console.log(data);
-        doLogin(data, () => {
+      .then((userData) => {
+        console.log(userData);
+        doLogin(userData, () => {
           console.log("User details saved in local storage !!");
-          userContextData.setUser({
-            data: data.content,
+          setUser({
+            srcUser: userData.srcUser,
+            tpUser: userData.tpUser,
             login: true,
           });
+          console.log(user);
           navigate("/dashboard");
         });
         toast.success("Login successful !!");

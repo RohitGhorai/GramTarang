@@ -14,9 +14,15 @@ export const doLogout = (next) => {
   next();
 };
 
-export const getCurrentUserDetail = () => {
+export const getCurrentSrcUserDetail = () => {
   return isLoggedIn()
-    ? JSON.parse(localStorage.getItem("data")).user
+    ? JSON.parse(localStorage.getItem("data")).srcUser
+    : undefined;
+};
+
+export const getCurrentTpUserDetail = () => {
+  return isLoggedIn()
+    ? JSON.parse(localStorage.getItem("data")).tpUser
     : undefined;
 };
 
