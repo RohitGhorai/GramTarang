@@ -77,13 +77,15 @@ export default function Login(props) {
         style={{
           boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
           transition: "0.3s",
-          maxWidth: "80%",
+          maxWidth: "70%",
           maxHeight: "100%",
           borderRadius: "5px",
           backgroundColor: "#466ACD",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
           marginTop: "100px",
-          marginLeft: "auto",
-          marginRight: "auto",
+          overflow: "hidden",
         }}
       >
         <Card.Body
@@ -168,7 +170,11 @@ export default function Login(props) {
           >
             <div
               className="flex-item-right"
-              style={{ backgroundColor: "transparent", padding: "10px" }}
+              style={{
+                backgroundColor: "transparent",
+                padding: "10px",
+                overflow: "hidden",
+              }}
             >
               <Form onSubmit={handleSubmit}>
                 <h2>Amasy Self Help Portal</h2>
@@ -231,12 +237,12 @@ export default function Login(props) {
               <p className="mb-2">
                 <a>Check Login Status</a>
               </p>
-              <p className="text-dark mb-0" style={{ fontSize: "15px" }}>
+              {/* <p className="text-dark mb-0" style={{ fontSize: "15px" }}>
                 Don't have account?
                 <a href=" " className="text-primary ml-1">
                   Sign Up
                 </a>
-              </p>
+              </p> */}
               <p style={{ fontSize: "15px" }}>
                 Don't have an account? Please click below link to register
                 yourself{" "}
@@ -244,7 +250,7 @@ export default function Login(props) {
               <p className="mb-0">
                 <Link
                   to={"/tp_regn_form"}
-                  className="font-normal ml-1 text-dark text-decoration-none"
+                  className="font-normal ml-1 text-primary text-decoration-none"
                 >
                   Training Partner on Boarding Application
                 </Link>

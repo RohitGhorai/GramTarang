@@ -1,8 +1,8 @@
 import { myAxios, privateAxios } from "./helper";
 
-export const signup = (user, schId, orgId) => {
+export const signup = (user) => {
   return myAxios
-    .post(`/auth/register/schemes/${schId}/orgs/${orgId}`, user)
+    .post(`/tpUsers/schemes/${user.schId}/orgs/${user.orgId}`, user)
     .then((response) => response.data);
 };
 
