@@ -13,6 +13,10 @@ import iconArchive from "../../Assets/icons/icon-archive";
 import iconBatch from "../../Assets/icons/icon-batch";
 import iconProfile from "../../Assets/icons/icon-profile";
 import iconDashboard from "../../Assets/icons/icon-dashboard";
+import { doLogout } from "../../authentication";
+import { useContext } from "react";
+import userContext from "../../context/userContext";
+import { toast } from "react-toastify";
 
 const useStyles = createUseStyles({
   separator: {
@@ -24,14 +28,23 @@ const useStyles = createUseStyles({
 });
 
 function SidebarComponent() {
+  const userContextData = useContext(userContext);
   const navigate = useNavigate();
   const theme = useTheme();
   const classes = useStyles({ theme });
   const isMobile = window.innerWidth <= 1080;
 
-  async function logout() {
-    navigate(SLUGS.login);
-  }
+  const logout = () => {
+    doLogout(() => {
+      userContextData.setUser({
+        srcUser: null,
+        tpUSer: null,
+        login: false,
+      });
+    });
+    navigate("/");
+    toast.success(`User logged out !!`);
+  };
 
   function onClick(slug, parameters = {}) {
     navigate(convertSlugToUrl(slug, parameters));
@@ -39,7 +52,15 @@ function SidebarComponent() {
 
   return (
     <Menu isMobile={isMobile}>
-      <div style={{ paddingBottom: 30, marginTop: "30" }}>
+      <div
+        style={{
+          paddingBottom: 30,
+          marginTop: 30,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <LogoComponent />
       </div>
       <MenuItem
@@ -120,23 +141,20 @@ function SidebarComponent() {
           SLUGS.batchManagementFour,
           SLUGS.batchManagementFive,
           SLUGS.batchManagementSix,
-          SLUGS.batchManagementSeven,
-          SLUGS.batchManagementEight,
-          SLUGS.batchManagementNine,
         ]}
         title="Batch Management"
         icon={iconBatch}
       >
         <MenuItem
           id={SLUGS.batchManagementTwo}
-          title="Generate ABN"
+          title="Assign ABN"
           level={2}
           icon={iconArrowRight}
           onClick={() => onClick(SLUGS.batchManagementTwo)}
         />
         <MenuItem
           id={SLUGS.batchManagementThree}
-          title="Add Batch"
+          title="Add/Upload Batch"
           level={2}
           icon={iconArrowRight}
           onClick={() => onClick(SLUGS.batchManagementThree)}
@@ -150,38 +168,17 @@ function SidebarComponent() {
         />
         <MenuItem
           id={SLUGS.batchManagementFive}
-          title="Data Correction"
+          title="Verify & Pay"
           level={2}
           icon={iconArrowRight}
           onClick={() => onClick(SLUGS.batchManagementFive)}
         />
         <MenuItem
           id={SLUGS.batchManagementSix}
-          title="Data Verification"
+          title="View Batch Details"
           level={2}
           icon={iconArrowRight}
           onClick={() => onClick(SLUGS.batchManagementSix)}
-        />
-        <MenuItem
-          id={SLUGS.batchManagementSeven}
-          title="Batch Payment"
-          level={2}
-          icon={iconArrowRight}
-          onClick={() => onClick(SLUGS.batchManagementSeven)}
-        />
-        <MenuItem
-          id={SLUGS.batchManagementEight}
-          title="Batch Status Details"
-          level={2}
-          icon={iconArrowRight}
-          onClick={() => onClick(SLUGS.batchManagementEight)}
-        />
-        <MenuItem
-          id={SLUGS.batchManagementNine}
-          title="Assessor Details"
-          level={2}
-          icon={iconArrowRight}
-          onClick={() => onClick(SLUGS.batchManagementNine)}
         />
       </MenuItem>
       <MenuItem

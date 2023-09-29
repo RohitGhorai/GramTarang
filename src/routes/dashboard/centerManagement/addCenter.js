@@ -2,14 +2,47 @@ import React from "react";
 import "./center.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Table from "../Table";
 
+const highlight = [
+  { title: "Amasy UID", value: "---------------" },
+  { title: "Center ID", value: "---------------" },
+  { title: "Center Name", value: "---------------" },
+  { title: "Scheme", value: "---------------" },
+  { title: "Project ID", value: "---------------" },
+];
+const particularsOfCenters = [
+  { title: "Name" },
+  { title: "Desigination" },
+  { title: "Citizenship" },
+  { title: "Date Of Birth" },
+  { title: "Resident Address" },
+  { title: "Permanent Address" },
+  { title: "Mobile Number" },
+  { title: "Alt. Mobile Number" },
+  { title: "Email" },
+  { title: "Educational Qualificaation" },
+  { title: "Total Work Experience" },
+  { title: "PAN Number" },
+  { title: "Aadhar Number(Optional)" },
+];
+const centerDetails = [
+  { title: "Address", type: "text" },
+  { title: "District", type: "text" },
+  { title: "City", type: "text" },
+  { title: "Country", type: "text" },
+  { title: "Pin Code", type: "text" },
+  { title: "Telephone", type: "text" },
+  { title: "Mobile", type: "text" },
+  { title: "Fax", type: "text" },
+  { title: "Email", type: "email" },
+];
 function AddCenter() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
     <>
-    
       <div className="Mainbody">
         <br></br>
 
@@ -19,248 +52,61 @@ function AddCenter() {
           <div className="row">
             <div className="column">
               <h5 className="text-center mt-3 mb-2"> Add Center Details</h5>
-              <table id="customers">
-                <tr>
-                  <th>Amasy UID</th>
-                  <th>Center ID</th>
-                  <th>Center Name</th>
-                  <th>Scheme</th>
-                  <th>Project ID</th>
-                </tr>
-                <tr className="text-center">
-                  <td>-------------</td>
-                  <td> --------------- </td>
-                  <td>--------------</td>
-                  <td>--------------</td>
-                  <td>Add</td>
-                </tr>
-              </table>
+              <Table items={highlight} />
               <h3 className="text-center mt-4 mb-3">Center Contact Details</h3>
 
               <div className="contain">
                 <form action="/">
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Address</label>
+                  {centerDetails.map((center, index) => (
+                    <div className="row">
+                      <div className="col-25">
+                        <label for="fname">{center.title}</label>
+                      </div>
+                      {center.title === "Country" ? (
+                        <div className="col-75">
+                          <select key={index} id="country" name="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                          </select>
+                        </div>
+                      ) : (
+                        <div className="col-75">
+                          <input
+                            key={index}
+                            type={center.type}
+                            id="fname"
+                            name={center.title}
+                          />
+                        </div>
+                      )}
                     </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" name="firstname" />
-                    </div>
-                  </div>
+                  ))}
 
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">District</label>
+                  <h3 className="text-center mt-3 mb-3">
+                    Particulars of Center
+                  </h3>
+                  {particularsOfCenters.map((poc, index) => (
+                    <div className="row">
+                      <div className="col-25">
+                        <label for="fname">{poc.title}*</label>
+                      </div>
+                      <div className="col-75">
+                        {poc.title === "Resident Address" ||
+                        poc.title === "Permanent Address" ? (
+                          <textarea type="text" id="fname" />
+                        ) : (
+                          <input type="text" id="fname" />
+                        )}
+                      </div>
                     </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" name="firstname" />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">City</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" name="firstname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="country">Country</label>
-                    </div>
-                    <div className="col-75">
-                      <select id="country" name="country">
-                        <option value="australia">Australia</option>
-                        <option value="canada">Canada</option>
-                        <option value="usa">USA</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Pin Code</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" name="Pincode" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Telephone</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Mobile</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Fax</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Email</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <h3 className="text-center mt-3 mb-3">Particulars of Center</h3>
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Name*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Desigination*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Citizenship*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Date Of Birth</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" name="dd/mm/yyyy" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Resident Address*</label>
-                    </div>
-                    <div className="col-75">
-                      <textarea
-                        id="subject"
-                        name="subject"
-                        placeholder=" "
-                        height="300px"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Permanent Address*</label>
-                    </div>
-                    <div className="col-75">
-                      <textarea
-                        id="subject"
-                        name="subject"
-                        placeholder=" "
-                        height="300px"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Mobile Number*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Alt. Mobile Number*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Email*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Educational Qualificaation*</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Total Work Experience</label>
-                    </div>
-                    <div className="col-75">
-                      <textarea
-                        id="subject"
-                        name="subject"
-                        placeholder=" "
-                        height="200px"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">PAN Number</label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-25">
-                      <label for="fname">Aadhar Number(Optional) </label>
-                    </div>
-                    <div className="col-75">
-                      <input type="text" id="fname" />
-                    </div>
-                  </div>
-
+                  ))}
                   <div className="row text-center">
                     <input
                       type="submit"
                       value="Proceed For Go Ahead Letter Upload"
                       className=" text-center mt-4"
-                      style={{width: "40%", margin: "auto"}}
+                      style={{ width: "40%", margin: "auto" }}
                     />
                     <Link to="/goAheadLetter" className="info">
                       Choose State

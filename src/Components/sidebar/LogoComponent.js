@@ -1,28 +1,42 @@
 import React from "react";
 import { Row } from "simple-flexbox";
 import { createUseStyles, useTheme } from "react-jss";
-import { IconLogo } from "../../Assets/icons";
+import profile from "../../Assets/default.png";
 
 const useStyles = createUseStyles((theme) => ({
-  container: {
-    marginLeft: 32,
-    marginRight: 32,
-  },
   title: {
-    ...theme.typography.cardTitle,
-    color: theme.color.grayishBlue,
-    opacity: 0.7,
-    marginLeft: 12,
+    color: "#fecd03",
+    marginLeft: 6,
+    fontSize: 18,
+    fontWeight: "bold"
   },
+  img:{
+    width: "50px",
+    height: "50px",
+    borderRadius: "100%",
+  },
+  smText:{
+    fontSize:12,
+    color: "#3fb2c8",
+    marginLeft: 6
+  },
+  rowContainer:{
+    display: "flex",
+    flexDirection: "column",
+    marginLeft: 12
+  }
 }));
 
 function LogoComponent() {
   const theme = useTheme();
   const classes = useStyles({ theme });
   return (
-    <Row className={classes.container} horizontal="center" vertical="center">
-      <IconLogo />
-      {/* <span className={classes.title}>Gramtarang</span> */}
+    <Row horizontal="center" vertical="center">
+      <img src={profile} alt="profileImg" className={classes.img}/>
+      <div className={classes.rowContainer}>
+      <span className={classes.title}>Demo Center</span>
+      <span className={classes.smText}>Training Center</span>
+      </div>
     </Row>
   );
 }

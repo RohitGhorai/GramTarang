@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { string } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { Row } from "simple-flexbox";
+import profile from "../../Assets/default.png"
 import { createUseStyles, useTheme } from "react-jss";
 import { SidebarContext } from "../../hooks/useSidebar";
 import SLUGS from "../../resources/slugs";
@@ -93,9 +94,6 @@ function HeaderComponent() {
       SLUGS.batchManagementFour,
       SLUGS.batchManagementFive,
       SLUGS.batchManagementSix,
-      SLUGS.batchManagementSeven,
-      SLUGS.batchManagementEight,
-      SLUGS.batchManagementNine,
     ].includes(currentItem):
       title = "Batch Management";
       break;
@@ -158,7 +156,7 @@ function HeaderComponent() {
             <>
               <span className={classes.name}>Jyoti Prakash Mallick</span>
               <img
-                src="https://avatars3.githubusercontent.com/u/21162888?s=460&v=4"
+                src={profile}
                 alt="avatar"
                 className={classes.avatar}
               />

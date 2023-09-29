@@ -13,13 +13,17 @@ import Home from "./Pages/Home";
 import UserProvider from "./context/UserProvider";
 import Login from "./Pages/Login";
 import { ToastContainer } from "react-toastify";
-import "./App.css"
+import "./App.css";
+import DashboardComponent from "./routes/dashboard/DashboardComponent";
+import AssignABN from "./routes/dashboard/batchManagement/AssignABN";
+import AddBatch from "./routes/dashboard/batchManagement/AddBatch";
+import UploadBatch from "./routes/dashboard/batchManagement/UploadBatch";
 
 function App() {
   return (
     <UserProvider>
       <Router>
-      <ToastContainer
+        <ToastContainer
           toastStyle={{
             backgroundColor: "black",
             WebkitTextFillColor: "#fff",
@@ -34,7 +38,7 @@ function App() {
           <Route path="/tp_regn_form" element={<Tp_regn />} />
 
           <Route path={SLUGS.dashboard} element={<PrivateRoute />}>
-            <Route path="" element={<div>Dashboard</div>} />
+            <Route path="" element={<DashboardComponent />} />
             <Route
               path="projectManagement/addProject"
               element={<div>Add Project</div>}
@@ -59,37 +63,19 @@ function App() {
               path="centerManagement/viewAllCenters"
               element={<ViewAllCenters />}
             />
-            <Route
-              path="batchManagement/generateABN"
-              element={<div>Generate ABN</div>}
-            />
-            <Route
-              path="batchManagement/addBatch"
-              element={<div>Add Batch</div>}
-            />
+            <Route path="batchManagement/assignABN" element={<AssignABN />} />
+            <Route path="batchManagement/addBatch" element={<AddBatch />} />
             <Route
               path="batchManagement/addPhotos"
               element={<div>Add Photos</div>}
             />
             <Route
-              path="batchManagement/dataCorrection"
-              element={<div>Data Correction</div>}
+              path="batchManagement/verify&pay"
+              element={<div>Verify & Pay</div>}
             />
             <Route
-              path="batchManagement/dataVerification"
-              element={<div>Data Verification</div>}
-            />
-            <Route
-              path="batchManagement/batchPayment"
-              element={<div>Batch Payment</div>}
-            />
-            <Route
-              path="batchManagement/batchStatusDetails"
-              element={<div>Batch Status Details</div>}
-            />
-            <Route
-              path="batchManagement/assessorDetails"
-              element={<div>Assessor Details</div>}
+              path="batchManagement/viewBatchDetails"
+              element={<div>Batch Details</div>}
             />
             <Route
               path="profileManagement"

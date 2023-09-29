@@ -48,6 +48,7 @@ export default function Login(props) {
         console.log(userData);
         doLogin(userData, () => {
           console.log("User details saved in local storage !!");
+          console.log(userData);
           setUser({
             srcUser: userData.srcUser,
             tpUser: userData.tpUser,

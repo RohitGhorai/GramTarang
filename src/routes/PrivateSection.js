@@ -32,25 +32,29 @@ function PrivateSection() {
 
   return (
     <ThemeProvider theme={Theme}>
-      {userContextData.user.login && userContextData.user.tpUser === null && (
-        <SidebarContext>
-          <Row className={classes.container}>
-            <SidebarComponent style={{ zIndex: "11" }} />
-            <Column flexGrow={1} className={classes.mainBlock}>
-              <HeaderComponent />
-              <div className={classes.contentBlock}>
-                <Outlet />
-              </div>
-            </Column>
-          </Row>
-        </SidebarContext>
-      )}
-      {userContextData.user.login && userContextData.user.srcUser === null && (
-
-        // add the tp User dashboard instead of <Navigate to="/tp_pia_map"/>
-        <Navigate to="/tp_pia_map" />
-
-      )}
+      {userContextData.user.login &&
+        userContextData.user.tpUser === null && userContextData.user.srcUser !== null &&
+        // (userContextData.user.srcUser !== null && userContextData.user.srcUser.roles[0].name === "SRC_USER") &&
+        (
+          // add the sna/src User dashboard instead of <Navigate to="/sna_map"/>
+          <Navigate to="/sna_map"/>
+        )}
+      {userContextData.user.login &&
+        userContextData.user.srcUser === null && userContextData.user.tpUser !== null &&
+        // (userContextData.user.tpUser !== null && userContextData.user.tpUser.roles[1].name === "TP_USER") &&
+        (
+          <SidebarContext>
+            <Row className={classes.container}>
+              <SidebarComponent style={{ zIndex: "11" }} />
+              <Column flexGrow={1} className={classes.mainBlock}>
+                <HeaderComponent />
+                <div className={classes.contentBlock}>
+                  <Outlet />
+                </div>
+              </Column>
+            </Row>
+          </SidebarContext>
+        )}
     </ThemeProvider>
   );
 }
