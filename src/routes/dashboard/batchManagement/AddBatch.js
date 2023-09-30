@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaRegFileExcel } from "react-icons/fa";
 import Table from "../Table";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-bootstrap";
 import UploadBatch from "./UploadBatch";
 
@@ -38,6 +37,9 @@ const styles = {
     fontWeight: "bold",
     color: "#4d207d",
   },
+  lgText: {
+    fontSize: "24px",
+  },
   fileStyle: {
     display: "visible",
     display: "inline-block",
@@ -48,16 +50,33 @@ const styles = {
     width: "100%",
   },
 };
+const upload = [
+  {
+    title: "Amasy UID",
+    type: "text",
+  },
+  {
+    title: "ABN No.",
+    type: "text",
+  },
+  {
+    title: "Upload Filled Excel file :",
+    type: "file",
+  },
+];
+
 const AddBatch = () => {
   const [hover, setHover] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const tableHeader = [
-    { title: "ABN No.", value: "--------------------------------" },
-    { title: "Center Project ID", value: "--------------------------------" },
-    { title: "Center Name", value: "--------------------------------" },
-    { title: "Batch ID", value: "--------------------------------" },
+    { title: "ABN No.", type:"text", disabled: true, value: "--------------------------------" },
+    { title: "Center Project ID", type:"text", disabled: true, value: "--------------------------------" },
+    { title: "Center Name", type:"text", disabled: true, value: "--------------------------------" },
+    { title: "Batch ID", type:"text", disabled: true, value: "--------------------------------" },
     {
       title: "Upload Excel",
+      type: "upload",
+      disabled: false,
       value: (
         <>
           <NavLink
@@ -67,16 +86,29 @@ const AddBatch = () => {
             <span style={{ fontSize: "16px" }}>Upload</span>
           </NavLink>
           <UploadBatch
-            show={modalShow}
-            onHide={() => setModalShow(false)}
+            modalShow={modalShow}
+            setShowModal={setModalShow}
+            items={upload}
+            heading={"Upload Batch"}
+            modalSize={"lg"}
           />
         </>
       ),
     },
   ];
   return (
-    <div className="card" style={{ height: "100%", width: "100%" }}>
-      <span className="text-center" style={styles.heading}>
+    <div
+      className="card w-100 h-100 mt-4"
+      style={{
+        borderColor: "#fff",
+        boxShadow:
+          "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
+      }}
+    >
+      <span
+        className="text-center"
+        style={{ ...styles.heading, ...styles.lgText }}
+      >
         Your List of Approved Centers with ABN Assigned
       </span>
       <div

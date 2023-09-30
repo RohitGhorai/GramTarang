@@ -4,11 +4,11 @@ import { slide as Menu } from "react-burger-menu";
 
 const getMenuStyles = ({ theme }) => ({
   bmBurgerButton: {
-    position: "absolute",
+    position: "fixed",
     width: 26,
     height: 20,
     left: 30,
-    top: 40,
+    top: 20,
     zIndex: 19,
   },
   bmBurgerBars: {
@@ -60,7 +60,7 @@ function MenuComponent({ children, isMobile }) {
       styles={menuStyles}
       onStateChange={(state) => setIsOpen(state.isOpen)}
     >
-      {children}
+      <div style={{display:"absolute"}}>{children}</div>
     </Menu>
   );
 }

@@ -17,7 +17,10 @@ import "./App.css";
 import DashboardComponent from "./routes/dashboard/DashboardComponent";
 import AssignABN from "./routes/dashboard/batchManagement/AssignABN";
 import AddBatch from "./routes/dashboard/batchManagement/AddBatch";
-import UploadBatch from "./routes/dashboard/batchManagement/UploadBatch";
+import AddPhotos from "./routes/dashboard/batchManagement/AddPhotos";
+import VerifyPay from "./routes/dashboard/batchManagement/VerifyPay";
+import UploadPhoto from "./routes/dashboard/batchManagement/UploadPhoto";
+import Pay from "./routes/dashboard/batchManagement/Pay";
 
 function App() {
   return (
@@ -65,13 +68,18 @@ function App() {
             />
             <Route path="batchManagement/assignABN" element={<AssignABN />} />
             <Route path="batchManagement/addBatch" element={<AddBatch />} />
+            <Route path="batchManagement/addPhotos" element={<AddPhotos />} />
             <Route
-              path="batchManagement/addPhotos"
-              element={<div>Add Photos</div>}
+              path="batchManagement/addPhotos/studentData"
+              element={<UploadPhoto />}
             />
             <Route
               path="batchManagement/verify&pay"
-              element={<div>Verify & Pay</div>}
+              element={<VerifyPay/>}
+            />
+            <Route
+              path="batchManagement/verify&pay/pay"
+              element={<Pay/>}
             />
             <Route
               path="batchManagement/viewBatchDetails"

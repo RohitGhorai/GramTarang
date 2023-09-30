@@ -46,8 +46,8 @@ function PrivateSection() {
           <SidebarContext>
             <Row className={classes.container}>
               <SidebarComponent style={{ zIndex: "11" }} />
-              <Column flexGrow={1} className={classes.mainBlock}>
-                <HeaderComponent />
+              <Column flexGrow={1} style={{ zIndex: "12" }} className={classes.mainBlock}>
+                <div className="fixed-top bg-white p-2" style={{boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}}><HeaderComponent /></div>
                 <div className={classes.contentBlock}>
                   <Outlet />
                 </div>

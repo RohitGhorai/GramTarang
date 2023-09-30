@@ -1,21 +1,13 @@
 import React from "react";
 import logo from "../../Assets/default.png";
 import Table from "./Table";
-import Paper from "../../Assets/paper.jpeg"
+import Paper from "../../Assets/paper.jpeg";
 
 const styles = {
   cardBody: {
-    margin: "8px",
-    padding: "10px",
-    display: "flex",
-    width: "100%",
-    height: "100%",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    boxSizing: "border-box",
-    border: "1px solid darkgray",
-    borderRadius: "8px",
+    borderColor: "#fff",
+    boxShadow:
+      "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
   },
   card: {
     marginTop: "5px",
@@ -44,58 +36,153 @@ const styles = {
 };
 
 const orgDetail = [
-  { title: "Amasy UID", value: "--------------" },
-  { title: "Organisation Name", value: "----------------" },
-  { title: "Contact Person", value: "----------------" },
-  { title: "Contact Email ID", value: "----------------" },
-  { title: "Contact Mobile No.", value: "----------------" },
+  {
+    title: "Amasy UID",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Organisation Name",
+    type: "text",
+    disabled: true,
+    value: "----------------",
+  },
+  {
+    title: "Contact Person",
+    type: "text",
+    disabled: true,
+    value: "----------------",
+  },
+  {
+    title: "Contact Email ID",
+    type: "text",
+    disabled: true,
+    value: "----------------",
+  },
+  {
+    title: "Contact Mobile No.",
+    type: "text",
+    disabled: true,
+    value: "----------------",
+  },
 ];
 const batchStatus = [
-  { title: "Project ID", value: "--------------" },
-  { title: "Center ID", value: "--------------" },
-  { title: "Center Name", value: "--------------" },
-  { title: "Total Batches", value: "--------------" },
-  { title: "Completed Batches", value: "--------------" },
-  { title: "Ongoing Batches", value: "--------------" },
-  { title: "Pending Batches", value: "--------------" },
+  {
+    title: "Project ID",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Center ID",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Center Name",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Total Batches",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Completed Batches",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Ongoing Batches",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Pending Batches",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
 ];
 const batchAssessmentStatus = [
-  { title: "Project ID", value: "--------------" },
-  { title: "Center ID", value: "--------------" },
-  { title: "Center Name", value: "--------------" },
-  { title: "Batch ID", value: "--------------" },
-  { title: "ABN No.", value: "--------------" },
-  { title: "Final Assessment Date", value: "--------------" },
-  { title: "Status", value: "--------------" },
+  {
+    title: "Project ID",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Center ID",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Center Name",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  {
+    title: "Batch ID",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  { title: "ABN No.", type: "text", disabled: true, value: "--------------" },
+  {
+    title: "Final Assessment Date",
+    type: "text",
+    disabled: true,
+    value: "--------------",
+  },
+  { title: "Status", type: "text", disabled: true, value: "--------------" },
 ];
 
 const DashboardComponent = () => {
   return (
-    <div className="cardBody" style={styles.cardBody}>
-      <div className="card" style={styles.card && { marginTop: "10px", backgroundImage: `url(${Paper})`, backgroundSize: "cover" }}>
+    <div className="card w-100 h-100 mt-3" style={styles.cardBody}>
+      <div
+        className="card"
+        style={
+          styles.card && {
+            marginTop: "10px",
+            backgroundImage: `url(${Paper})`,
+            backgroundSize: "cover",
+          }
+        }
+      >
         <div
           className="container"
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            WebkitTextFillColor: "#fff"
+            WebkitTextFillColor: "#fff",
           }}
         >
-          <image src={logo}
+          <image
+            src={logo}
             style={{
               width: "60px",
               height: "60px",
               marginBottom: "10px",
               borderRadius: "100%",
               backgroundImage: `url(${logo})`,
-              backgroundSize: "cover"
+              backgroundSize: "cover",
             }}
             alt="logo"
           />
           <span style={{ fontWeight: "bold" }}>Welcome Onboard!</span>
-          <span style={{marginTop:"5px"}}>Demo Centre</span>
-          <span style={{fontSize:"12px"}}>Training Partner</span>
+          <span style={{ marginTop: "5px" }}>Demo Centre</span>
+          <span style={{ fontSize: "12px" }}>Training Partner</span>
         </div>
       </div>
       <div className="card" style={styles.card}>

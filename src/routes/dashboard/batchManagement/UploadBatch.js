@@ -1,36 +1,23 @@
 import React from "react";
 import { Form, Modal, Button, Container } from "react-bootstrap";
 
-const upload = [
-  {
-    title: "Amasy UID",
-    type: "text",
-  },
-  {
-    title: "ABN No.",
-    type: "text",
-  },
-  {
-    title: "Upload Filled Excel file :",
-    type: "file",
-  },
-];
-function UploadBatch(props) {
+function UploadBatch({modalShow, setShowModal, heading, items, modalSize}) {
   return (
     <Modal
-      {...props}
-      size="lg"
+      show={modalShow}
+      onHide={() => setShowModal(false)}
+      size={modalSize}
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Upload Batch
+        <Modal.Title id="contained-modal-title-vcenter" style={{fontWeight: "bold", color: "rgb(77, 32, 125)"}}>
+          {heading}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form noValidate>
-          {upload.map((input, index) => (
+          {items.map((input, index) => (
             <Form.Group className="mb-3 d-flex justify-content-between col-12">
               <Form.Label className="col-3">{input.title}</Form.Label>
               <Form.Control

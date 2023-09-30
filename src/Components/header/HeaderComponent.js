@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { string } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { Row } from "simple-flexbox";
-import profile from "../../Assets/default.png"
+import profile from "../../Assets/default.png";
 import { createUseStyles, useTheme } from "react-jss";
 import { SidebarContext } from "../../hooks/useSidebar";
 import SLUGS from "../../resources/slugs";
@@ -23,10 +23,13 @@ const useStyles = createUseStyles((theme) => ({
   },
   container: {
     height: 40,
+    width: "100v",
   },
   name: {
     ...theme.typography.itemTitle,
     textAlign: "right",
+    color: "##025c6d",
+    marginLeft: 5,
     "@media (max-width: 768px)": {
       display: "none",
     },
@@ -44,6 +47,9 @@ const useStyles = createUseStyles((theme) => ({
   },
   title: {
     ...theme.typography.title,
+    "@media (min-width: 1080px)": {
+      marginLeft: 240,
+    },
     "@media (max-width: 1080px)": {
       marginLeft: 50,
     },
@@ -94,6 +100,7 @@ function HeaderComponent() {
       SLUGS.batchManagementFour,
       SLUGS.batchManagementFive,
       SLUGS.batchManagementSix,
+      SLUGS.studentData,
     ].includes(currentItem):
       title = "Batch Management";
       break;
@@ -116,9 +123,10 @@ function HeaderComponent() {
       className={classes.container}
       vertical="center"
       horizontal="space-between"
-      style={{zIndex: 1}}
-    >
-      <span className={classes.title}>{title}</span>
+    > 
+      <div className="d-flex justify-content-center px-5">
+        <span className={classes.title}>{title}</span>
+      </div>
       <Row vertical="center">
         <div className={classes.iconStyles}>
           <IconSearch />
@@ -154,12 +162,8 @@ function HeaderComponent() {
         <DropdownComponent
           label={
             <>
-              <span className={classes.name}>Jyoti Prakash Mallick</span>
-              <img
-                src={profile}
-                alt="avatar"
-                className={classes.avatar}
-              />
+              <img src={profile} alt="avatar" className={classes.avatar} />
+              <span className={classes.name}>Demo Centre</span>
             </>
           }
           options={[

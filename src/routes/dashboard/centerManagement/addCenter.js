@@ -4,12 +4,32 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Table from "../Table";
 
-const highlight = [
-  { title: "Amasy UID", value: "---------------" },
-  { title: "Center ID", value: "---------------" },
-  { title: "Center Name", value: "---------------" },
-  { title: "Scheme", value: "---------------" },
-  { title: "Project ID", value: "---------------" },
+const tableData = [
+  {
+    title: "Amasy UID",
+    type: "text",
+    disabled: true,
+    value: "---------------",
+  },
+  {
+    title: "Center ID",
+    type: "text",
+    disabled: true,
+    value: "---------------",
+  },
+  {
+    title: "Center Name",
+    type: "text",
+    disabled: true,
+    value: "---------------",
+  },
+  { title: "Scheme", type: "text", disabled: true, value: "---------------" },
+  {
+    title: "Project ID",
+    type: "text",
+    disabled: true,
+    value: "---------------",
+  },
 ];
 const particularsOfCenters = [
   { title: "Name" },
@@ -43,18 +63,40 @@ function AddCenter() {
   }, []);
   return (
     <>
-      <div className="Mainbody">
-        <br></br>
-
-        <div className="card">
-          <h3 className="text-center">Add New Training Center </h3>
-          <p></p>
+      <div
+        className="card w-100 h-100 mt-4"
+        style={{
+          borderColor: "#fff",
+          boxShadow:
+            "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
+        }}
+      >
+        <div className="m-4 mb-1 mt-2">
+          <h3 className="text-center" style={{ margin: "0.5em" }}>
+            Add New Training Center
+          </h3>
           <div className="row">
             <div className="column">
-              <h5 className="text-center mt-3 mb-2"> Add Center Details</h5>
-              <Table items={highlight} />
+              <div
+                className="border p-2 rounded"
+                style={{
+                  width: "100%",
+                  borderColor: "#fff",
+                  boxShadow:
+                    "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
+                }}
+              >
+                <Table
+                  heading={"Add Center Details"}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                  items={tableData}
+                />
+              </div>
               <h3 className="text-center mt-4 mb-3">Center Contact Details</h3>
-
               <div className="contain">
                 <form action="/">
                   {centerDetails.map((center, index) => (

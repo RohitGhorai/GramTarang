@@ -141,6 +141,8 @@ function SidebarComponent() {
           SLUGS.batchManagementFour,
           SLUGS.batchManagementFive,
           SLUGS.batchManagementSix,
+          SLUGS.studentData,
+          SLUGS.batchPay
         ]}
         title="Batch Management"
         icon={iconBatch}
