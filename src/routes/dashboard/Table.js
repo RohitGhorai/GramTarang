@@ -3,7 +3,7 @@ import React from "react";
 const Table = ({ items, heading, style }) => {
   return (
     <div style={style}>
-      <span style={{ margin: "1em", fontSize: "22px", fontWeight: "bold" }}>
+      <span style={{ margin: "1em", fontSize: "22px", fontWeight: "bold", WebkitTextFillColor: "#51287f" }}>
         {heading}
       </span>
       <table id="customers">

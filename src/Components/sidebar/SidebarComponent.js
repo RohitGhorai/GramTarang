@@ -75,6 +75,7 @@ function SidebarComponent() {
           SLUGS.projectManagementTwo,
           SLUGS.projectManagementThree,
           SLUGS.projectManagementFour,
+          SLUGS.addNewTrainingCenter
         ]}
         title="Project Management"
         icon={iconArchive}

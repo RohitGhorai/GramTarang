@@ -5,6 +5,7 @@ export default {
   projectManagement: '/dashboard/projectManagement',
   projectManagementTwo: '/dashboard/projectManagement/addProject',
   projectManagementThree: '/dashboard/projectManagement/addAffiliation',
+  addNewTrainingCenter: '/dashboard/projectManagement/addAffiliation/add',
   projectManagementFour: '/dashboard/projectManagement/viewAllProjects',
   centerManagement: '/dashboard/centerManagement',
   centerManagementTwo: '/dashboard/centerManagement/addOperationalState',

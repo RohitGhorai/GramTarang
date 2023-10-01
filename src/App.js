@@ -15,12 +15,17 @@ import Login from "./Pages/Login";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import DashboardComponent from "./routes/dashboard/DashboardComponent";
-import AssignABN from "./routes/dashboard/batchManagement/AssignABN";
-import AddBatch from "./routes/dashboard/batchManagement/AddBatch";
-import AddPhotos from "./routes/dashboard/batchManagement/AddPhotos";
-import VerifyPay from "./routes/dashboard/batchManagement/VerifyPay";
-import UploadPhoto from "./routes/dashboard/batchManagement/UploadPhoto";
-import Pay from "./routes/dashboard/batchManagement/Pay";
+import AddProject from "./routes/dashboard/projectManagement/AddProject";
+import AddAffiliation from "./routes/dashboard/projectManagement/AddAffiliation";
+import {
+  AddBatch,
+  AddPhotos,
+  AssignABN,
+  Pay,
+  UploadPhoto,
+  VerifyPay,
+} from "./routes/dashboard/batchManagement/index";
+import AddNewTrainingCenter from "./routes/dashboard/projectManagement/AddNewTrainingCenter";
 
 function App() {
   return (
@@ -44,11 +49,15 @@ function App() {
             <Route path="" element={<DashboardComponent />} />
             <Route
               path="projectManagement/addProject"
-              element={<div>Add Project</div>}
+              element={<AddProject />}
             />
             <Route
               path="projectManagement/addAffiliation"
-              element={<div>Add Affiliation</div>}
+              element={<AddAffiliation/>}
+            />
+            <Route
+              path="projectManagement/addAffiliation/add"
+              element={<AddNewTrainingCenter/>}
             />
             <Route
               path="projectManagement/viewAllProjects"
@@ -73,14 +82,8 @@ function App() {
               path="batchManagement/addPhotos/studentData"
               element={<UploadPhoto />}
             />
-            <Route
-              path="batchManagement/verify&pay"
-              element={<VerifyPay/>}
-            />
-            <Route
-              path="batchManagement/verify&pay/pay"
-              element={<Pay/>}
-            />
+            <Route path="batchManagement/verify&pay" element={<VerifyPay />} />
+            <Route path="batchManagement/verify&pay/pay" element={<Pay />} />
             <Route
               path="batchManagement/viewBatchDetails"
               element={<div>Batch Details</div>}
