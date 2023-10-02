@@ -4,13 +4,13 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-    padding: 0;
+  padding: 0;
 }
 
 /* Remove default margin */
@@ -28,33 +28,33 @@ figcaption,
 blockquote,
 dl,
 dd {
-    margin: 0;
+  margin: 0;
 }
 
 /* Set core body defaults */
 body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-    list-style: none;
+  list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-    text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -62,24 +62,45 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
-    background-color: #f7f8fc;
-    font-family: Muli;
-    /* font-style: normal;
+  background-color: #f7f8fc;
+  font-family: Muli;
+  /* font-style: normal;
     font-weight: normal;
     font-size: 20px; */
-    line-height: 26px;
+  line-height: 26px;
+}
+
+.left-to-right-animation {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  animation: moveLeftToRight 10s linear infinite;
+}
+
+.moving-element {
+  position: absolute;
+  animation: moveLeftToRight 5s linear infinite reverse;
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }

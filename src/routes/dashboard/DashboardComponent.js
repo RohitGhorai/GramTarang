@@ -185,11 +185,13 @@ const DashboardComponent = () => {
           <span style={{ fontSize: "12px" }}>Training Partner</span>
         </div>
       </div>
-      <div className="card" style={styles.card}>
+      <div className="card" style={{...styles.card, overflow: "hidden"}}>
         <span style={styles.smText}>Notice / Updates For You</span>
-        <span style={styles.lgText}>
+        <div className="left-to-right-animation" style={styles.lgText}>
+        <span>
           Welcome to Centurion University | Amasy Portal. | Please Pay Your Fees
         </span>
+        </div>
       </div>
       <div className="card" style={styles.card && { padding: "15px" }}>
         <Table

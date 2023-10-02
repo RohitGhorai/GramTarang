@@ -1,46 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Table from "../Table";
 import { Button } from "react-bootstrap";
-import { affiliationInfo } from "./Affiliated";
+import { affiliationInfo, table } from "./Affiliated";
 
-const table = [
-  {
-    title: "Amasy UID",
-    type: "text",
-    disabled: false,
-    value: "-----------------",
-  },
-  {
-    title: "Center ID",
-    type: "text",
-    disabled: false,
-    value: "-----------------",
-  },
-  {
-    title: "Center Name",
-    type: "text",
-    disabled: false,
-    value: "-----------------",
-  },
-  {
-    title: "Scheme",
-    type: "text",
-    disabled: false,
-    value: "-----------------",
-  },
-  {
-    title: "Scheme",
-    type: "text",
-    disabled: false,
-    value: "-----------------",
-  },
-  {
-    title: "Project ID",
-    type: "text",
-    disabled: false,
-    value: "-----------------",
-  },
-];
 const flexBox = {
   width: "90%",
   display: "flex",
@@ -50,10 +12,11 @@ const length = affiliationInfo.SSC.length;
 
 const AddNewTrainingCenter = () => {
   const [mobileView, setMobileView] = useState(false);
+  const [affiliated, setAffiliated] = useState([]);
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth <= 856) setMobileView(true);
+      if (screenWidth <= 800) setMobileView(true);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -61,6 +24,14 @@ const AddNewTrainingCenter = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleChange = (e) => {
+    if (e.target.checked) {
+      setAffiliated([...affiliated, e.target.value]);
+    } else {
+      setAffiliated(affiliated.filter((item) => item !== e.target.value));
+    }
+  };
   return (
     <div
       className="card w-100 h-100 mt-3 d-flex flex-column"
@@ -84,7 +55,7 @@ const AddNewTrainingCenter = () => {
         Affiliation / Accreditation Details
       </span>
       <div
-        className="mt-5"
+        className="mt-5 fs-6"
         style={{
           ...flexBox,
           flexDirection: !mobileView ? "row" : "column",
@@ -98,34 +69,38 @@ const AddNewTrainingCenter = () => {
                 className="form-check-input"
                 type="checkbox"
                 key={i}
-                id="flexCheckChecked"
+                id={`flexCheckChecked${i}`}
                 style={{ marginRight: "5px" }}
+                value={aff.value}
+                onChange={handleChange}
               />
-              <label className="p-0" for="flexCheckChecked">
+              <label className="p-0" for={`flexCheckChecked${i}`}>
                 {aff.title}
               </label>
             </div>
           ))}
-          <div className="fw-bold mt-4 mb-2">
+          <div className="fs-5 fs-5 fw-bold mt-4 mb-2">
             <span>SSC</span>
           </div>
           {affiliationInfo.SSC.slice(0, 8).map((ssc, i) => (
-            <div className={(i === 7) && "mb-4"}>
+            <div className={i === 7 && "mb-4"}>
               <input
                 className="form-check-input"
                 type="checkbox"
                 key={i}
-                id="flexCheckChecked"
+                id={`flexCheckChecked2${i}`}
                 style={{ marginRight: "5px" }}
+                value={ssc.value}
+                onChange={handleChange}
               />
-              <label className="p-0" for="flexCheckChecked">
+              <label className="p-0" for={`flexCheckChecked2${i}`}>
                 {ssc.title}
               </label>
             </div>
           ))}
         </div>
         <div>
-          <div className="fw-bold mb-2">
+          <div className="fs-5 fw-bold mb-2">
             <span>SSC</span>
           </div>
           {affiliationInfo.SSC.slice(8, 23).map((ssc, i) => (
@@ -134,17 +109,19 @@ const AddNewTrainingCenter = () => {
                 className="form-check-input"
                 type="checkbox"
                 key={i}
-                id="flexCheckChecked"
+                id={`flexCheckChecked3${i}`}
                 style={{ marginRight: "5px" }}
+                value={ssc.value}
+                onChange={handleChange}
               />
-              <label className="p-0" for="flexCheckChecked">
+              <label className="p-0" for={`flexCheckChecked3${i}`}>
                 {ssc.title}
               </label>
             </div>
           ))}
         </div>
         <div>
-          <div className="fw-bold mb-2">
+          <div className="fs-5 fw-bold mb-2">
             <span>SSC</span>
           </div>
           {affiliationInfo.SSC.slice(23, length).map((ssc, i) => (
@@ -153,10 +130,12 @@ const AddNewTrainingCenter = () => {
                 className="form-check-input"
                 type="checkbox"
                 key={i}
-                id="flexCheckChecked"
+                id={`flexCheckChecked4${i}`}
                 style={{ marginRight: "5px" }}
+                value={ssc.value}
+                onChange={handleChange}
               />
-              <label className="p-0" for="flexCheckChecked">
+              <label className="p-0" for={`flexCheckChecked4${i}`}>
                 {ssc.title}
               </label>
             </div>

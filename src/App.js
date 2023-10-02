@@ -17,6 +17,7 @@ import "./App.css";
 import DashboardComponent from "./routes/dashboard/DashboardComponent";
 import AddProject from "./routes/dashboard/projectManagement/AddProject";
 import AddAffiliation from "./routes/dashboard/projectManagement/AddAffiliation";
+import ViewAllProjects from "./routes/dashboard/projectManagement/ViewAllProjects";
 import {
   AddBatch,
   AddPhotos,
@@ -61,7 +62,7 @@ function App() {
             />
             <Route
               path="projectManagement/viewAllProjects"
-              element={<div>View All Projects</div>}
+              element={<ViewAllProjects/>}
             />
             <Route
               path="centerManagement/addOperationalState"
