@@ -1,11 +1,15 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { getAllSchemes } from "../../services/sche-service";
-import { getAllOrgs } from "./../../services/org-service";
+import { getAllSchemes, getSchById } from "../../services/sche-service";
+import { getAllOrgs, getOrgById } from "./../../services/org-service";
 
 export const TpRegnProcess_2 = ({ rgData, setRgData }) => {
   const [scheme, setScheme] = React.useState([]);
   const [org, setOrg] = React.useState([]);
+  const [select, selectData] = React.useState({
+    orgType: "",
+    schemeName: "",
+  });
   const [input, setInput] = React.useState({
     schId: 0,
     orgId: 0,
@@ -37,6 +41,14 @@ export const TpRegnProcess_2 = ({ rgData, setRgData }) => {
   useEffect(() => {
     getAllSchemes().then((data) => setScheme([...data]));
     getAllOrgs().then((data) => setOrg([...data]));
+    if (rgData.orgId > 0 || rgData.schId > 0) {
+      getSchById(rgData.schId).then((data) =>
+        selectData({ schemeName: data.schemeName })
+      );
+      getOrgById(rgData.orgId).then((data) =>
+        selectData({ orgType: data.orgType })
+      );
+    }
   }, []);
 
   const handleChange = (event, field) => {
@@ -172,7 +184,7 @@ export const TpRegnProcess_2 = ({ rgData, setRgData }) => {
               defaultValue={0}
             >
               <option value={0} disabled>
-                {rgData.schId === 0 ? "--Select--" : rgData.schId}
+                {rgData.schId === 0 ? "--Select--" : select.schemeName}
               </option>
               {scheme.map((props, index) => (
                 <option value={props.schemeId} key={index}>
@@ -202,10 +214,10 @@ export const TpRegnProcess_2 = ({ rgData, setRgData }) => {
               defaultValue={0}
             >
               <option value={0} disabled>
-                {rgData.orgId === 0 ? "--Select--" : rgData.orgId}
+                {rgData.orgId === 0 ? "--Select--" : select.orgType}
               </option>
-              {org.map((props) => (
-                <option value={props.orgId} key={props.orgId}>
+              {org.map((props, index) => (
+                <option value={props.orgId} key={index}>
                   {props.orgType}
                 </option>
               ))}

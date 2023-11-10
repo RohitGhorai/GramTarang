@@ -8,6 +8,7 @@ import { SidebarContext } from "../../hooks/useSidebar";
 import SLUGS from "../../resources/slugs";
 import { IconBell, IconSearch } from "../../Assets/icons";
 import DropdownComponent from "../../Components/dropdown";
+import userContext from "./../../context/userContext";
 
 const useStyles = createUseStyles((theme) => ({
   avatar: {
@@ -28,7 +29,7 @@ const useStyles = createUseStyles((theme) => ({
   name: {
     ...theme.typography.itemTitle,
     textAlign: "right",
-    color: "##025c6d",
+    color: "#025c6d",
     marginLeft: 5,
     "@media (max-width: 768px)": {
       display: "none",
@@ -71,7 +72,8 @@ function HeaderComponent() {
   const { currentItem } = useContext(SidebarContext);
   const theme = useTheme();
   const classes = useStyles({ theme });
-
+  const data = useContext(userContext);
+  console.log(data);
   let title;
   switch (true) {
     case currentItem === SLUGS.dashboard:
@@ -123,7 +125,7 @@ function HeaderComponent() {
       className={classes.container}
       vertical="center"
       horizontal="space-between"
-    > 
+    >
       <div className="d-flex justify-content-center px-5">
         <span className={classes.title}>{title}</span>
       </div>
@@ -131,7 +133,7 @@ function HeaderComponent() {
         <div className={classes.iconStyles}>
           <IconSearch />
         </div>
-        <div className={classes.iconStyles}>
+        {/* <div className={classes.iconStyles}>
           <DropdownComponent
             label={<IconBell />}
             options={[
@@ -157,13 +159,17 @@ function HeaderComponent() {
               right: -14,
             }}
           />
-        </div>
+        </div> */}
         <div className={classes.separator}></div>
         <DropdownComponent
           label={
             <>
               <img src={profile} alt="avatar" className={classes.avatar} />
-              <span className={classes.name}>Demo Centre</span>
+              <span className={classes.name}>
+                {data.user.tpUser !== null
+                  ? data.user.tpUser.orgName
+                  : data.user.srcUser.name}
+              </span>
             </>
           }
           options={[

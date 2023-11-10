@@ -37,8 +37,7 @@ function SidebarComponent() {
   const logout = () => {
     doLogout(() => {
       userContextData.setUser({
-        srcUser: null,
-        tpUSer: null,
+        user: null,
         login: false,
       });
     });

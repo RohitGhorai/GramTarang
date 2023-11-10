@@ -62,6 +62,10 @@ export default function Login(props) {
       .catch((error) => {
         console.log(error);
         if (error.response.status === 400 || error.response.status === 404) {
+          setLoginDetail({
+            userName: "",
+            password: ""
+          });
           toast.error(error.response.data.message);
         } else {
           toast.error(

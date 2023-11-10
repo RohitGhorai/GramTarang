@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../Assets/default.png";
 import Table from "./Table";
 import Paper from "../../Assets/paper.jpeg";
+import userContext from "../../context/userContext";
 
 const styles = {
   cardBody: {
@@ -34,37 +35,36 @@ const styles = {
     WebkitTextFillColor: "#d8ac1a",
   },
 };
-
-const orgDetail = [
+const orgDetail = (data) => [
   {
     title: "Amasy UID",
     type: "text",
     disabled: true,
-    value: "--------------",
+    value: data.user.tpUser.id,
   },
   {
     title: "Organisation Name",
     type: "text",
     disabled: true,
-    value: "----------------",
+    value: data.user.tpUser.orgName,
   },
   {
     title: "Contact Person",
     type: "text",
     disabled: true,
-    value: "----------------",
+    value: data.user.tpUser.pcName,
   },
   {
     title: "Contact Email ID",
     type: "text",
     disabled: true,
-    value: "----------------",
+    value: data.user.tpUser.pcEmail,
   },
   {
     title: "Contact Mobile No.",
     type: "text",
     disabled: true,
-    value: "----------------",
+    value: data.user.tpUser.pcPhNumber,
   },
 ];
 const batchStatus = [
@@ -147,6 +147,8 @@ const batchAssessmentStatus = [
 ];
 
 const DashboardComponent = () => {
+  const data = useContext(userContext);
+  console.log(data)
   return (
     <div className="card w-100 h-100 mt-3" style={styles.cardBody}>
       <div
@@ -197,7 +199,7 @@ const DashboardComponent = () => {
         <Table
           style={styles.textCenter}
           heading={"Particulars of the Organizations"}
-          items={orgDetail}
+          items={orgDetail(data)}
         />
       </div>
       <div className="card" style={styles.card && { padding: "15px" }}>
