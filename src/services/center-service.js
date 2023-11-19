@@ -8,7 +8,9 @@ export const createCenter = (center, tpUserId) => {
 
 export const getAllCenters = (pageNumber, pageSize) => {
   return privateAxios
-    .get(`/centers?pageNumber=${pageNumber}&pageSize=${pageSize}&sortDirection=desc`, centers)
+    .get(
+      `/centers?pageNumber=${pageNumber}&pageSize=${pageSize}&sortDirection=desc`,
+    )
     .then((response) => response.data);
 };
 
@@ -21,5 +23,11 @@ export const updateCenter = (center, centerId) => {
 export const deleteCenter = (centerId) => {
   return privateAxios
     .delete(`/centers/${centerId}`)
+    .then((response) => response.data);
+};
+
+export const getCenterByTpUser = (tpUserId, centers) => {
+  return privateAxios
+    .get(`/tpUsers/${tpUserId}/centers`, centers)
     .then((response) => response.data);
 };

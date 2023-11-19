@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../Assets/default.png";
 import Table from "./Table";
 import Paper from "../../Assets/paper.jpeg";
 import userContext from "../../context/userContext";
+import { getCenterByTpUser } from "../../services/center-service";
+import BatchStatus from "./BatchStatus";
 
 const styles = {
   cardBody: {
@@ -67,50 +69,7 @@ const orgDetail = (data) => [
     value: data.user.tpUser.pcPhNumber,
   },
 ];
-const batchStatus = [
-  {
-    title: "Project ID",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-  {
-    title: "Center ID",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-  {
-    title: "Center Name",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-  {
-    title: "Total Batches",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-  {
-    title: "Completed Batches",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-  {
-    title: "Ongoing Batches",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-  {
-    title: "Pending Batches",
-    type: "text",
-    disabled: true,
-    value: "--------------",
-  },
-];
+
 const batchAssessmentStatus = [
   {
     title: "Project ID",
@@ -148,6 +107,17 @@ const batchAssessmentStatus = [
 
 const DashboardComponent = () => {
   const data = useContext(userContext);
+  const [centers, setCenters] = useState();
+  useEffect(() => {
+    getCenterByTpUser(data.user.tpUser.id)
+      .then(center => {
+        setCenters(center);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, [data.user.tpUser.id]);
+  console.log(centers)
   console.log(data)
   return (
     <div className="card w-100 h-100 mt-3" style={styles.cardBody}>
@@ -202,13 +172,9 @@ const DashboardComponent = () => {
           items={orgDetail(data)}
         />
       </div>
-      <div className="card" style={styles.card && { padding: "15px" }}>
-        <Table
-          style={styles.textCenter}
-          heading={"Batch Status"}
-          items={batchStatus}
-        />
-      </div>
+      {centers && centers.map((center) => (
+        <BatchStatus centerId={center.id}/>
+      ))}
       <div className="card" style={styles.card && { padding: "15px" }}>
         <Table
           style={styles.textCenter}
